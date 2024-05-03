@@ -1,16 +1,13 @@
-
 // Profile Picture
 const setProfilePicture = () => {
     let randomN = Math.floor(Math.random() * 20) + 1
     let profilePictureURL = '/images/ProfilePictures/pp' + randomN +'.jpg'
     document.getElementById("profilePicture").src = profilePictureURL
-    document.cookie = 'profilePicture='+profilePictureURL
+    document.cookie = 'profilePictureURL='+profilePictureURL
 }
 setProfilePicture()
 
 document.getElementById("nextPP").onclick = function() {setProfilePicture()}
-
-
 
 // Enter already existing room
 document.getElementById("joinRoom").onclick = function() {
@@ -21,7 +18,7 @@ document.getElementById("joinRoom").onclick = function() {
     } else if (roomID === '') {
         alert('No room ID found !')
     } else {
-        document.cookie = 'Username='+username;
+        document.cookie = 'username='+username;
         document.cookie = 'roomID='+roomID
         document.location.href="/rooms"
     }
@@ -41,7 +38,7 @@ document.getElementById("newRoom").onclick = function() {
     if (username === '') {
         alert('No username found !')
     } else {
-        document.cookie = 'Username='+username;
+        document.cookie = 'username='+username;
         document.cookie = 'roomID='+ getRandomRoomID()
         document.location.href="/rooms"
     }

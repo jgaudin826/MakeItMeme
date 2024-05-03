@@ -32,11 +32,15 @@ server.on('listening', onListening);
 
 const io = new Server(server);
 
-io.on('connection', (socket) => {
+io.on('connection', async (socket) => {
   console.info(`a user connected [id=${socket.id}]`);
-  socket.on('room', function(roomID) {
+  socket.on('joinRoom', async function(roomID,username,profilePictureURL) {
+    socket.data.username = username
+    socket.data.profilePictureURL = profilePictureURL
     socket.join(roomID);
-    console.log('user connected on room :',roomID);
+    const sockets = await io.in(roomID).fetchSockets();
+    io.to(roomID).emit("playerList", sockets.map(function (socket) {return socket.data}));
+
     socket.on('disconnect', () => {
       console.log('user disconnected');
     })
