@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Votes</title>
+    <link rel='stylesheet' href='/stylesheets/votes.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/public/javascripts/votes.js"></script>
+    <script src="/public/javascripts/rooms.js"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body id="body">
+    <h2>Votez le meme !</h2>
+    <section>
+        <img id="meme">
+        <a id="" class="upVote">↑</a>
+        <a id="" class="mouaisVote">Mouais</a>
+        <a id="" class="downVote">↓</a>
+    </section>
   </body>
 </html>

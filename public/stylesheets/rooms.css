@@ -1,0 +1,37 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+}
+
+h2 {
+    color: #e71f1f;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-family: "Lilita One";
+    font-size: 60px;
+}
+
+.rooms {
+
+}
+
+h3 {
+    justify-items: center;
+    font-family: "Arimo";
+}
+
+.playersList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+}

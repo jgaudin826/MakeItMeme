@@ -11,6 +11,7 @@ body {
 h1 {
     color: #e71f1f;
     margin-top: auto;
+    margin-bottom: 20px;
     font-family: "Lilita One";
     font-size: 100px;
 }
@@ -25,6 +26,7 @@ p {
     color: white;
     font-family: "Arimo";
     font-size: 22px;
+    margin-bottom: 70px;
 }
 
 a {
@@ -58,17 +60,21 @@ a {
 .party {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 30px;
+    margin-top: 60px;
 }
 
-.party button {
+.party a {
     color: white;
     background-color: #DC143C;
     font-size: 18px;
+    font-family: "Arimo";
     padding: 15px 25px;
     border-radius: 30px;
     border: 1px solid #B22222;
+    margin-top: 1px;
 }
 
 .partyInput {

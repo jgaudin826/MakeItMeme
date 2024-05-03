@@ -1,0 +1,37 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+    font-family: "Arimo";
+}
+
+h2 {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+a {
+    color: white;
+    background-color: #0000CD;
+    border: 1px solid #00008B;
+    font-size: 30px;
+    padding: 3px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.upVote {
+    background-color: #B22222;
+}
+
+.mouaisVote {
+    background-color: white;
+    color: black;
+}

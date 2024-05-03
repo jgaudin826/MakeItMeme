@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Création du meme</title>
+    <link rel='stylesheet' href='/stylesheets/memes.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/public/javascripts/memes.js"></script>
+    <script src="/public/javascripts/rooms.js"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body id="body">
+    <h2>Créez votre meme !</h2>
+    <section class="meme">
+      <section class="memeImg">
+        <p>Meme Title</p>
+        <img id="meme">
+      </section>
+      <section class="memeText">
+        <form name="capsion" class="memeForm">
+          <input class="memeInput" placeholder="Écrivez votre texte ici">
+          <a id="">Envoyez votre meme !</a>
+        </form>
+      </section>
+    </section>
   </body>
 </html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>home</title>
+    <title>MEME PAS MAL</title>
     <link rel='stylesheet' href='/stylesheets/home.css' />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
     <script src="/public/javascripts/home.js"></script>
   </head>
-  <body>
+  <body id="body">
     <h1>MEME PAS MAL</h1>
     <p>Le jeu où vous pourrez ridiculiser vos amis !</p>
     <section class="pdpSection">
-      <img class="pdpImg" id="profilePicture">
+      <img class="pdpImg" id="profilePicture" src="">
     </section>
     <a id="nextPP" class="nextPdp" href="">></a>
     <h3>Choisissez un surnom :</h3>
@@ -20,10 +20,10 @@
     </form>
     <section class="party">
       <h3>Créer une partie :</h3>
-      <button id="">Créer une partie !</button>
+      <a id="">Créer une partie !</a>
       <h3>Rejoindre une partie :</h3>
       <input name="" class="partyInput"  placeholder="Votre code de 8 caractères">
-      <button id="" type="submit" onclick="">Rejoindre !</button>
+      <a id="" type="submit" onclick="">Rejoindre !</a>
     </section>
   </body>
 </html>
