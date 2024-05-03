@@ -14,3 +14,5 @@
 - Création Meme 
 - Votes 
 - Classement
+- fin de partie
+- transitions

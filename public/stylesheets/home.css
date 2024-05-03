@@ -1,0 +1,79 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+}
+
+h1 {
+    color: #e71f1f;
+    margin-top: auto;
+    font-family: "Lilita One";
+    font-size: 100px;
+}
+
+h3 {
+    color: white;
+    font-family: "Arimo";
+    font-size: 25px;
+}
+
+p {
+    color: white;
+    font-family: "Arimo";
+    font-size: 22px;
+}
+
+a {
+    color: white;
+    background-color: #0000CD;
+    border: 1px solid #00008B;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.pdpSection {
+    text-align: center;
+    margin: auto auto;
+    border: 3px solid;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.userInput {
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: 1px solid #00008B;
+}
+
+.party {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.party button {
+    color: white;
+    background-color: #DC143C;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #B22222;
+}
+
+.partyInput {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #00008B;
+    border-radius: 30px;
+}
