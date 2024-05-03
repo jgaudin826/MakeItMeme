@@ -7,13 +7,13 @@ const GetAPI = async () => {
 }
 
 const GetAPIbyID = async (id) => {
-    const memeList = GetAPI();
+    const memeList = await GetAPI();
     for (let meme of memeList) {
         if (meme.id == id) {
             return meme;
         }
     }
-    return 'Error : meme not found'
+    throw new Error('Meme not found');
 }
 
 const PostAPI = async (templateID, textList) => {
