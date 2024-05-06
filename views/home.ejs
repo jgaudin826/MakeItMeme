@@ -16,14 +16,16 @@
     <a id="nextPP" class="nextPdp" href="">></a>
     <h3>Choisissez un surnom :</h3>
     <form name="username" class="username">
-      <input name="username" class="userInput" id="usernameInput"/>
+      <input name="username" class="userInput" id="usernameInput" required maxlength="15"/>
     </form>
     <section class="party">
       <h3>Créer une partie :</h3>
-      <a id="">Créer une partie !</a>
+      <a id="newRoom">Créer une partie !</a>
       <h3>Rejoindre une partie :</h3>
-      <input name="" class="partyInput"  placeholder="Votre code de 8 caractères">
-      <a id="" type="submit" onclick="">Rejoindre !</a>
+      <form name="roomID">
+        <input name="roomID" class="partyInput" type="number" placeholder="Votre code de 8 caractères" required minlength="8" maxlength="8">
+      </form>
+      <a id="joinRoom" type="submit" onclick="">Rejoindre !</a>
     </section>
   </body>
 </html>

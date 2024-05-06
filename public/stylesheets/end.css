@@ -1,0 +1,17 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+    font-family: "Arimo";
+}
+
+h2 {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
