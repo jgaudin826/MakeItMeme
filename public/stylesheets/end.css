@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    height: 105vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
@@ -53,30 +53,11 @@ ul {
     margin-right: 20px; 
   }
 
-p{
-    
-    display: inline block;
-
-}
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 .leaderboard {
     list-style: none;
 }
 
-.leave {
+a {
     color: white;
     background-color: #DC143C;
     font-size: 18px;
@@ -89,4 +70,23 @@ p{
 
 .leaveSection {
     margin-top: 50px;
+}
+
+.pseudo{
+    font-size: 50px;
+
+}
+
+.score{
+    font-size: 40px;
+
+
+
+}
+
+.classement{
+    font-size:  45px; 
+
+
+
 }

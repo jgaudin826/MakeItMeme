@@ -21,3 +21,33 @@ h5 {
     font-family: "Arimo";
     font-size: 25px;
 }
+
+.loading-container {
+    width: 600px;
+    height: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+    z-index: 1;
+  }
+  
+  .loading-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #ff6b6b, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    background-size: 200% 200%;
+    animation: loading-animation 10s ease-in-out infinite;
+  }
+  
+  @keyframes loading-animation {
+    0% {
+      width: 0%;
+      background-position: 0% 50%;
+    }
+    100% {
+      width: 100%;
+      background-position: 100% 50%;
+    }
+  }
+  

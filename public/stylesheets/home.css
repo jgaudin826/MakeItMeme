@@ -76,7 +76,21 @@ a {
     margin-bottom: 0px;
     border: 1px solid #B22222;
     margin-top: 1px;
+    cursor: pointer;
 }
+
+.party a:hover {
+    background-color: #B22222;
+}
+
+.party a:active {
+    transform: translateY(1px);
+}
+
+.party a[onclick] {
+    cursor: pointer;
+}
+
 
 .partyInput {
     height: 30px;
