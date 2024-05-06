@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Fin de Partie</title>
+    <link rel='stylesheet' href='/stylesheets/end.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/public/javascripts/end.js"></script>
+    <script src="/public/javascripts/rooms.js"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <script src="/javascripts/end.js" type="module"></script>
+  <body id="body">
+    <h2>Fin de la partie !</h2>
+    <section class="rank">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </section>
+    <section>
+      <a id="leave">Quitter</a>
+  </section>
   </body>
 </html>
