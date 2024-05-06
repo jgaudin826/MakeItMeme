@@ -42,6 +42,29 @@ a {
     padding: 15px 25px;
     border-radius: 30px;
     border: 1px solid #B22222;
-    margin-top: 1px;
-
 }
+
+.pdpImg{ 
+    width: 500px;
+    height: 500px;
+}
+
+.pdpSection {
+    text-align: center;
+    border: 3px solid;
+    margin: auto auto; 
+    width: 500px;
+    height: 500px;
+}
+
+/* .textSection {
+    text-align: center;
+    border: 3px solid;
+    margin-left: 110%; 
+    margin-top: 100%;
+    width: 500px;
+    height: 50px;
+    border-radius: 49%;
+
+} */
+
