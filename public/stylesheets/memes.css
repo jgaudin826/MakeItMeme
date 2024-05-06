@@ -33,3 +33,14 @@ a {
     border: 1px solid #00008B;
     border-radius: 30px;
 }
+
+.leave {
+    color: white;
+    background-color: #DC143C;
+    font-size: 18px;
+    font-family: "Arimo";
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #B22222;
+    margin-top: 1px;
+}
