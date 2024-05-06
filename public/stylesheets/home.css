@@ -73,6 +73,7 @@ a {
     font-family: "Arimo";
     padding: 15px 25px;
     border-radius: 30px;
+    margin-bottom: 0px;
     border: 1px solid #B22222;
     margin-top: 1px;
 }
@@ -82,4 +83,11 @@ a {
     width: 200px;
     border: 1px solid #00008B;
     border-radius: 30px;
+}
+
+.pdpImg{ 
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
 }
