@@ -1,4 +1,4 @@
- * {
+* {
     text-align: center;
 }
 
@@ -6,24 +6,18 @@ body {
     margin: 0;
     height: 100vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
-    font-family: "Arimo";
 }
 
-h2 {
-    color: white;
+h3 {
+    color: #0000CD;
     margin-top: auto;
     margin-bottom: 20px;
-    font-size: 60px;
+    font-family: "Arimo";
+    font-size: 50px;
 }
 
-
-.leave {
+h5 {
     color: white;
-    background-color: #DC143C;
-    font-size: 18px;
     font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #B22222;
-    margin-top: 1px;
+    font-size: 25px;
 }
