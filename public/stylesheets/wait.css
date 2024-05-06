@@ -1,0 +1,23 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+}
+
+h3 {
+    color: #0000CD;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-family: "Arimo";
+    font-size: 50px;
+}
+
+h5 {
+    color: white;
+    font-family: "Arimo";
+    font-size: 25px;
+}
