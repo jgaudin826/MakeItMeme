@@ -32,43 +32,12 @@ server.on('listening', onListening);
 
 const io = new Server(server);
 
-io.on('connection', async (socket) => {
-  console.info(`a user connected [id=${socket.id}]`);
-  socket.on('joinRoom', async function(roomID,username,profilePictureURL) {
-    let sockets = await io.in(roomID).fetchSockets();
-
-    for (let player of sockets) {
-      if (player.data.username == username && player.data.profilePictureURL == profilePictureURL) {
-        socket.emit("error", "")
-      }
-    }
-
-    socket.data.username = username
-    socket.data.profilePictureURL = profilePictureURL
-    socket.join(roomID);
-    
-    sockets = await io.in(roomID).fetchSockets();
-    io.to(roomID).emit("playerList", sockets.map(function (socket) {return socket.data}));
-
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    })
-
-    const games = []
-    socket.on("start", async (roomID) => {
-      io.to(roomID).emit("startGame", "");
-      const game = {room: roomID}
-      sockets = await io.in(roomID).fetchSockets();
-      for (let player of sockets) {
-        game[player.data.username] = {totalPoints: 0, roundPoints: 0, meme: ""}
-      }
-      games.push(game)
-      socket.on('submitMeme', (roomID, meme) => {
-
-      })
-    })
-  })
-})
+io.on('connection', (socket) => {
+  console.log(`a user connected [id=${socket.id}]`);
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 /**
  * Normalize a port into a number, string, or false.
