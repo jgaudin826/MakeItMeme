@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ranks</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Récapitulatif de la manche</title>
+    <link rel='stylesheet' href='/stylesheets/ranks.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/javascripts/rooms.js"></script>
   </head>
-  <body>
-    <h1>Ranks</h1>
-    <p>Welcome to Ranks</p>
-    <script src="/javascripts/ranks.js" type="module"></script>
+  <body id="body">
+    <h2>Manche (1/3) :</h2>
+    <section class="pdpSection">
+      <img class="pdpImg" id="profilePicture" src="/images/ProfilePictures/pp11.jpg">
+    <section class="rank">
+      </section>
+      <ul>
+        
+      </ul>
+    </section>
+    <a href="/images/ProfilePictures/pp11.jpg" download>Télécharger le meme</a>
+    <section class="leaveSection">
+      <a id="leave" class="leave">Quitter</a>
+    </section>
   </body>
 </html>
+

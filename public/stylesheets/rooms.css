@@ -1,0 +1,60 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+}
+
+h2 {
+    color: #e71f1f;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-family: "Lilita One";
+    font-size: 60px;
+}
+
+.rooms {
+
+}
+
+h3 {
+    justify-items: center;
+    font-family: "Arimo";
+}
+
+.playersList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.start {
+    color: white;
+    background-color: #65B741;
+    font-size: 18px;
+    font-family: "Arimo";
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #65B741;
+    margin-top: 1px;
+    margin-right: 20px;
+}
+
+.leave {
+    color: white;
+    background-color: #DC143C;
+    font-size: 18px;
+    font-family: "Arimo";
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #B22222;
+    margin-top: 1px;
+}
