@@ -57,7 +57,7 @@ io.on('connection', async (socket) => {
     
     socket.on("start", async (roomID) => {
       io.to(roomID).emit("startGame", "");
-      const game = {room: roomID}
+      const game = {room: roomID, nPlayers: 0, nMemeSubmited : 0}
       sockets = await io.in(roomID).fetchSockets();
       for (let player of sockets) {
         game[player.data.username] = {totalPoints: 0, roundPoints: 0, meme: ""}
