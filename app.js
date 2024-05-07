@@ -9,6 +9,7 @@ var roomsRouter = require('./routes/rooms');
 var memesRouter = require('./routes/memes');
 var votesRouter = require('./routes/votes');
 var ranksRouter = require('./routes/ranks');
+var waitRouter = require('./routes/wait');
 var endRouter = require('./routes/end');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use('/rooms', roomsRouter);
 app.use('/memes', memesRouter);
 app.use('/votes', votesRouter);
 app.use('/ranks', ranksRouter);
+app.use('/wait', waitRouter);
 app.use('/end', endRouter);
 
 // catch 404 and forward to error handler

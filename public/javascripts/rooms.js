@@ -13,7 +13,7 @@ document.getElementById("roomID").textContent = document.getElementById("roomID"
 
 socket.on('error', () => {
   document.location.href="/";
-  alert("Error! A player with the same username and profile picture already exists in the game you are trying to join")
+  alert("Error! A player with the same username already exists in the game you are trying to join")
   socket.disconnect();
 });
 

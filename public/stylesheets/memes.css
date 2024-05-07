@@ -28,7 +28,7 @@ a {
 }
 
 .memeInput {
-    height: 30px;
+    height: 50px;
     width: 200px;
     border: 1px solid #00008B;
     border-radius: 30px;
@@ -44,22 +44,13 @@ a {
     border: 1px solid #B22222;
 }
 
-.pdpImg{ 
-    width: 500px;
-    height: 500px;
-}
-
-.pdpSection {
-    text-align: center;
-    border: 3px solid;
-    margin: auto auto; 
-    width: 500px;
-    height: 500px;
-    margin-left: 20% ;
-}
-
 .leaveSection {
     margin-top: 75px;
 }
 
+.memeText {
+    margin-top: 10px;
+}
 
+.memeForm {
+}

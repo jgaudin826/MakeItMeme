@@ -64,7 +64,8 @@ document.getElementById("submit").onclick = function() {
     }
     PostAPI(currentMeme.id, captionsList).then(function(result){
         finalMeme = result
-        socket.emit("submitMeme" (roomID, finalMeme))
+        socket.emit("submitMeme", roomID, finalMeme)
+        console.log(meme)
         document.location.href = "/wait"
     })
 }

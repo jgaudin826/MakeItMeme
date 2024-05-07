@@ -6,17 +6,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
   <body id="body">
-    <script src="/javascripts/rooms.js"></script>
+    <script src="/javascripts/memes.js" type="module"></script>
     <script src="/javascripts/api.js" type="module"></script>
     <h2>Créez votre meme !</h2>
     <section class="meme">
       <section class="memeImg">
-        <p>Meme Title</p>
-        <img id="meme">
-        <a id="changeMeme">Changer de meme</a>
+        <p id="memeTitle"></p>
+        <img id="meme" src="">
         <section class="memeText">
-          <form name="captions" class="memeForm">
+          <form name="captions" id="captions" class="memeForm">
           </form>
+          <a id="changeMeme">Changer de meme</a>
           <a id="submit">Envoyez votre meme !</a>
         </section>
       </section>

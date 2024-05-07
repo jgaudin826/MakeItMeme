@@ -5,10 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/home.css' />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
-  <body id="body">
+  <body>
     <h1>MEME PAS MAL</h1>
     <p>Le jeu où vous pourrez ridiculiser vos amis !</p>
-    <script src="/javascripts/home.js"></script>
+    <script src="/javascripts/home.js" type="module"></script>
     <section class="pdpSection">
       <img id="profilePicture" class="pdpImg" src="">
     </section>
@@ -25,7 +25,6 @@
         <input name="roomID" class="partyInput" type="number" placeholder="Votre code de 8 caractères" required minlength="8" maxlength="8">
       </form>
       <a id="joinRoom" type="submit" onclick="">Rejoindre !</a>
-      
     </section>
   </body>
 </html>
