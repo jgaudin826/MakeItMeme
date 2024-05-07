@@ -33,15 +33,11 @@ server.on('listening', onListening);
 const io = new Server(server);
 
 io.on('connection', (socket) => {
-  console.info(`a user connected [id=${socket.id}]`);
-  socket.on('room', function(roomID) {
-    socket.join(roomID);
-    console.log('user connected on room :',roomID);
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    })
-  })
-})
+  console.log(`a user connected [id=${socket.id}]`);
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 /**
  * Normalize a port into a number, string, or false.

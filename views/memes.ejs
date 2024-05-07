@@ -4,31 +4,24 @@
     <title>Création du meme</title>
     <link rel='stylesheet' href='/stylesheets/memes.css' />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/public/javascripts/rooms.js"></script>
   </head>
   <body id="body">
+    <script src="/javascripts/rooms.js"></script>
+    <script src="/javascripts/api.js" type="module"></script>
     <h2>Créez votre meme !</h2>
     <section class="meme">
       <section class="memeImg">
         <p>Meme Title</p>
         <img id="meme">
-        <section class="pdpSection">
-          <img class="pdpImg" id="profilePicture" src="/images/ProfilePictures/pp11.jpg">
-        <section class="textSection">
-          <p class="text2"></p>
-          <p class="text3"></p>
-          <p class="text4"></p>
+        <a id="changeMeme">Changer de meme</a>
+        <section class="memeText">
+          <form name="captions" class="memeForm">
+          </form>
+          <a id="submit">Envoyez votre meme !</a>
+        </section>
       </section>
-      <section class="memeText">
-        <form name="captions" class="memeForm">
-        </form>
-        <a id="">Envoyez votre meme !</a>
-      </section>
-    </section>
     <section class="leaveSection">
       <a id="leave" class="leave">Quitter</a>
-  </section>
-  
+    </section>
   </body>
 </html>

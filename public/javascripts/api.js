@@ -1,19 +1,10 @@
+// IMGFLIP API IMPLEMENTATION
 const imgflip_api_url = "https://api.imgflip.com/get_memes";
 
 const GetAPI = async () => {
     const response = await fetch(imgflip_api_url); //Send API request and wait response
     const myJson = await response.json(); //extract JSON from the http response
     return myJson.data.memes;
-}
-
-const GetAPIbyID = async (id) => {
-    const memeList = await GetAPI();
-    for (let meme of memeList) {
-        if (meme.id == id) {
-            return meme;
-        }
-    }
-    throw new Error('Meme not found');
 }
 
 const PostAPI = async (templateID, textList) => {
@@ -35,9 +26,7 @@ const PostAPI = async (templateID, textList) => {
     });
 
     const myJson = await response.json(); //extract JSON from the http response
-    return myJson.data;
+    return myJson.data.url;
 }
 
-module.exports ={
-    GetAPI,GetAPIbyID,PostAPI
-}
+export {GetAPI, PostAPI}
