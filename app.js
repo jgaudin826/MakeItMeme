@@ -10,8 +10,10 @@ var memesRouter = require('./routes/memes');
 var votesRouter = require('./routes/votes');
 var ranksRouter = require('./routes/ranks');
 var endRouter = require('./routes/end');
+var waitRouter = require('./routes/wait')
 
 var app = express();
+console.log("http://localhost:3000/")
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +31,7 @@ app.use('/memes', memesRouter);
 app.use('/votes', votesRouter);
 app.use('/ranks', ranksRouter);
 app.use('/end', endRouter);
+app.use('/wait', waitRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

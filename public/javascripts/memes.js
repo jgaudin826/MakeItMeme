@@ -1,43 +1,4 @@
-// IMGFLIP API IMPLEMENTATION
-const imgflip_api_url = "https://api.imgflip.com/get_memes";
-
-const GetAPI = async () => {
-    const response = await fetch(imgflip_api_url); //Send API request and wait response
-    const myJson = await response.json(); //extract JSON from the http response
-    return myJson.data.memes;
-}
-
-const GetAPIbyID = async (id) => {
-    const memeList = await GetAPI();
-    for (let meme of memeList) {
-        if (meme.id == id) {
-            return meme;
-        }
-    }
-    throw new Error('Meme not found');
-}
-
-const PostAPI = async (templateID, textList) => {
-    const API_url = new URLSearchParams(); // Create API request with my presonal account and the template ID
-    API_url.append("template_id", templateID);
-    API_url.append("username", "jgaudin");
-    API_url.append("password", "UysZ*pQ9C3Y$RU");
-
-    for (let i = 0; i < textList.length; i++) {  // Add each caption to the API request
-        API_url.append("boxes["+i+"][text]", textList[i]);
-    }
-
-    const response = await fetch('https://api.imgflip.com/caption_image', {  //Send API request and wait response
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: API_url
-    });
-
-    const myJson = await response.json(); //extract JSON from the http response
-    return myJson.data;
-}
+import {GetAPI, PostAPI } from "/javascripts/api.js";
 
 // Sockets.IO  main page code
 import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
@@ -54,13 +15,28 @@ document.getElementById("leave").onclick = function() {
   document.location.href="/";
 }
 
+
+// Call the GetAPI only once then stocks it into memeList when changing memes
+let memeList = []
+const getMemeList = () => {
+    GetAPI().then(function(allMemes) {
+        memeList = allMemes
+        generateMemePage()
+    })
+}
+
+let currentMeme = ""
 const generateMemePage = () => {
     const randomN = Math.floor(Math.random() * 100)
-    GetAPI().then(function(memeList) {
-        const currentMeme = memeList[randomN]
-        console.log(currentMeme)
-        document.getElementById("memeTitle").textContent = currentMeme.name
-        document.getElementById("meme").src = currentMeme.url
+    currentMeme = memeList[randomN]
+    document.getElementById("memeTitle").textContent = currentMeme.name
+
+    let captionsList = []
+    for (let i=0; i< currentMeme.box_count; i++) {
+        captionsList.push("Caption " + (i+1))
+    }
+    PostAPI(currentMeme.id, captionsList).then(function(result){
+        document.getElementById("meme").src = result
         let oldForm = document.getElementById("captions");
         oldForm.remove();
         const form = document.createElement('form');
@@ -77,10 +53,18 @@ const generateMemePage = () => {
     })
 }
 
-generateMemePage()
+getMemeList()
 document.getElementById("changeMeme").onclick = function() {generateMemePage()}
 
+let finalMeme = ""
 document.getElementById("submit").onclick = function() {
-    
+    let captionsList = []
+    for (let i=0; i< currentMeme.box_count; i++) {
+        captionsList.push(document.forms["captions"][i].value)
+    }
+    PostAPI(currentMeme.id, captionsList).then(function(result){
+        finalMeme = result
+        socket.emit("submitMeme" (roomID, finalMeme))
+        document.location.href = "/wait"
+    })
 }
-
