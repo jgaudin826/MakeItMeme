@@ -72,17 +72,9 @@ a {
     margin-top: 50px;
 }
 
-.pseudo{
-    font-size: 50px;
-
-}
-
-.score{
-    font-size: 40px;
 
 
 
-}
 
 .classement{
     font-size:  45px; 
@@ -90,3 +82,73 @@ a {
 
 
 }
+
+
+.classement2{
+    font-size:  45px; 
+    margin-top: -6.5%;
+    margin-left: 30%;
+
+
+}
+
+
+.classement3{
+    font-size:  45px; 
+    margin-top: -6.5%;
+    margin-right: 30%;
+
+
+}
+
+.joueur1{
+    font-size: 50px;
+    margin-top: -2%;
+
+}
+
+.joueur2{
+    font-size: 50px;
+    margin-top: -7.5%;
+    margin-left: 40%;
+
+
+    
+}
+
+.joueur3{
+    font-size: 50px;
+    margin-top: -7%;
+    margin-right: 38%;
+    
+}
+
+
+.score1{
+    font-size: 40px;
+    margin-top: -3%;
+
+
+
+}
+
+.score2{
+    font-size: 40px;
+    margin-top: -6%;
+    margin-left: 40%;
+
+
+
+}
+
+.score3{
+    font-size: 40px;
+    margin-top: -5.7%;
+    margin-right: 38%;
+
+
+
+
+}
+    
+    
