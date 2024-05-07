@@ -31,6 +31,7 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 const io = new Server(server);
+let games = []
 
 io.on('connection', async (socket) => {
   console.info(`a user connected [id=${socket.id}]`);
@@ -38,7 +39,7 @@ io.on('connection', async (socket) => {
     let sockets = await io.in(roomID).fetchSockets();
 
     for (let player of sockets) {
-      if (player.data.username == username && player.data.profilePictureURL == profilePictureURL) {
+      if (player.data.username == username) {
         socket.emit("error", "")
       }
     }
@@ -53,8 +54,7 @@ io.on('connection', async (socket) => {
     socket.on('disconnect', () => {
       console.log('user disconnected');
     })
-
-    const games = []
+    
     socket.on("start", async (roomID) => {
       io.to(roomID).emit("startGame", "");
       const game = {room: roomID}
@@ -63,10 +63,20 @@ io.on('connection', async (socket) => {
         game[player.data.username] = {totalPoints: 0, roundPoints: 0, meme: ""}
       }
       games.push(game)
-      socket.on('submitMeme', (roomID, meme) => {
+      window.setTimeout(() => {
+        io.to(roomID).emit("memeTimeEnd", "");
+      }, (120000));
 
-      })
     })
+
+    socket.on('submitMeme', (roomID, meme) => {
+      for (let game of games) {
+        if (game.room == roomID) {
+          game[socket.data.username]['meme'] = meme
+        }
+      }
+    })
+
   })
 })
 
