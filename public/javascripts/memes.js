@@ -64,12 +64,12 @@ document.getElementById("submit").onclick = function() {
     }
     PostAPI(currentMeme.id, captionsList).then(function(result){
         finalMeme = result
-        socket.emit("submitMeme", roomID, finalMeme)
+        socket.emit("submitMeme", finalMeme)
         document.location.href = "/wait"
     })
 }
 
-socket.on("memeTimeEnd", ()=> {
+socket.on("memeTimeEnd", () => {
     let captionsList = []
     for (let i=0; i< currentMeme.box_count; i++) {
         if(document.forms["captions"][i].value == '') {
@@ -79,7 +79,7 @@ socket.on("memeTimeEnd", ()=> {
     }
     PostAPI(currentMeme.id, captionsList).then(function(result){
         finalMeme = result
-        socket.emit("submitMeme", roomID, finalMeme)
+        socket.emit("submitMeme", finalMeme)
         document.location.href = "/votes"
     })
 })

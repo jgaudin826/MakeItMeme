@@ -15,3 +15,11 @@ document.getElementById("leave").onclick = function() {
 socket.on("memeTimeEnd", () => {
     document.location.href = "/votes"
 })
+
+socket.on("voteTimeEnd", () => {
+  document.location.href = "/votes"
+})
+
+socket.on("roundEnd", () => {
+  document.location.href = "/ranks"
+})
