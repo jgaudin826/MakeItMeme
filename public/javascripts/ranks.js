@@ -51,7 +51,7 @@ socket.on("rankings", (playerScores, allMemes, roundInfo) => {
     // Scores
     let oldScoresList = document.getElementById("scores")
     oldScoresList.remove();
-    const list2 = document.createElement('ul');
+    const list2 = document.createElement('ol');
     list2.setAttribute("id","scores");
     for (let player of playerScores) {
         var img = document.createElement('img')

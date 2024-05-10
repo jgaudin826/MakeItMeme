@@ -12,10 +12,15 @@ document.getElementById("leave").onclick = function() {
   document.location.href="/";
 }
 
-socket.on("vote", (meme, number) => {
+socket.on("vote", (meme, number, player) => {
     document.getElementById("meme").src = meme
     document.getElementById("download").href = meme
     document.getElementById("memeNumber").textContent = "Meme " + number
+    if (player == username) {
+        document.getElementById("vote").hidden = true
+    } else {
+        document.getElementById("vote").hidden = false
+    }
 })
 
 document.getElementById("upvote").onclick = function() {

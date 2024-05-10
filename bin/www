@@ -91,7 +91,7 @@ io.on('connection', async (socket) => {
     
     const votes = () => {
       let currentPlayer	= game.playerList[game.currentMeme]
-      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + sockets.length));
+      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + sockets.length),currentPlayer);
 
       // Loop until all memes have been voted
       var voteTimer = setInterval(() => {
@@ -134,7 +134,14 @@ io.on('connection', async (socket) => {
       }
 
       let playerScores = sockets.map(function (socket) {return [socket.data.username, socket.data.profilePictureURL, game[socket.data.username].roundPoints, game[socket.data.username].totalPoints]})
+      playerScores.sort((a,b) => {
+        return a[3] - b[3]
+      })
+      
       let allMemes = game.playerList.map(function (player) {return [game[player].meme,player,game[player].roundPoints]})
+      playerScores.sort((a,b) => {
+        return a[2] - b[2]
+      })
       
       // Sorting the lists - not done
       
@@ -147,7 +154,9 @@ io.on('connection', async (socket) => {
       setTimeout(() => {
         if (game.round == nRounds) {
           io.to(roomID).emit("endGame", "")
-          gameEnd()
+          setTimeout(() => {
+            gameEnd()
+          }, 1000); 
         } else {
           game.round += 1
           io.to(roomID).emit("startRound", "")
@@ -156,7 +165,15 @@ io.on('connection', async (socket) => {
     }
 
     const gameEnd = () => {
-      // End of game - not done
+      let finalPlayerScores = sockets.map(function (socket) {return [socket.data.username, socket.data.profilePictureURL, game[socket.data.username].totalPoints]})
+      finalPlayerScores.sort((a,b) => {
+        return a[2] - b[2]
+      })
+      io.to(roomID).emit("finalRankings", finalPlayerScores.slice(0, 3))
+
+      setTimeout(() => {
+        io.to(roomID).emit("newGame", "")
+      },30000)
     }
 
   })
