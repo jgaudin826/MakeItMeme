@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wait</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Wait</h1>
-    <p>Welcome to Wait</p>
+    <title>En attente</title>
+    <link rel='stylesheet' href='/stylesheets/wait.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
     <script src="/javascripts/wait.js" type="module"></script>
-    <p id="memeTitle"></p>
-    <a id="leave">Leave</a>
+  </head>
+  <div class="loading-container">
+    <div class="loading-bar"></div>
+  </div>
+  <body id="body">
+    <h3>En attente des autres joueurs...</h1>
+    <h5>C'est le moment d'aller pisser !</h3>
+    <section class="leaveSection">
+      <a id="leave" class="leave">Quitter</a>
+    </section>
   </body>
 </html>

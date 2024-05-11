@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>MEME PAS MAL</title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Home</h1>
-    <p>Welcome to Home</p>
+    <h1>MEME PAS MAL</h1>
+    <p>Le jeu où vous pourrez ridiculiser vos amis !</p>
     <script src="/javascripts/home.js" type="module"></script>
-    <img id="profilePicture" src="" alt="profile Picture">
-    <a id="nextPP">Next Profile Picture</a>
-
-    <form name="username" method="get">
-      <input type="text" name="username" placeholder="Username"><br>
+    <section class="pdpSection">
+      <img id="profilePicture" class="pdpImg" src="">
+    </section>
+    <a id="nextPP" class="nextPdp" href="" onclick="">></a>
+    <h3>Choisissez un surnom :</h3>
+    <form name="username" class="username" method="get">
+      <input id="usernameInput" name="username" class="userInput" required maxlength="15"/>
     </form>
-    <form name="roomID" method="get">
-      <input type="text" name="roomID" placeholder="Room ID"><br>
-    </form>
-
-    <a id="joinRoom">Join Room</a>
-    <a id="newRoom">New Room</a>
+    <section class="party">
+      <h3>Créer une partie :</h3>
+      <a id="newRoom">Créer une partie !</a>
+      <h3>Rejoindre une partie :</h3>
+      <form name="roomID">
+        <input name="roomID" class="partyInput" type="number" placeholder="Votre code de 8 caractères" required minlength="8" maxlength="8">
+      </form>
+      <a id="joinRoom" type="submit" onclick="">Rejoindre !</a>
+    </section>
   </body>
 </html>

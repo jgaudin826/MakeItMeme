@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rooms</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Partie</title>
+    <link rel='stylesheet' href='/stylesheets/rooms.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
   <body id="body">
-    <h1>Rooms</h1>
-    <p>Welcome to Rooms</p>
     <script src="/javascripts/rooms.js" type="module"></script>
-    <img id="profilePicture" src="" alt="profile Picture">
-    <p id="username"></p>
-    <p id="roomID"></p>
-    <a id="leave">Leave</a>
-    <a id="start">Start</a>
-    <ul id="playerList"></ul>
+    <h2>MEME PAS MAL</h2>
+    <section class="room">
+        <h3 id="roomID">Code de la partie :</h3>
+        <h3 class="playersTitle">Joueurs (Maximum 10) :</h3>
+        <section class="pdpSection"></section>
+          <img src="" id="profilePicture" class="pdpImg" alt="">
+        </section>
+        <h3 id="username"></h3>
+        <section class="playersList">
+            <ul id="playersList" class="list">
+            </ul>
+        </section>
+        <section>
+            <a id="start" class="start">Commencer</a>
+            <a id="leave" class="leave">Quitter</a>
+        </section>
   </body>
 </html>
