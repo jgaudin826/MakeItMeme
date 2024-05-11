@@ -1,0 +1,65 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+    font-family: "Arimo";
+}
+
+h2 {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+a {
+    color: white;
+    background-color: #0000CD;
+    border: 1px solid #00008B;
+    font-size: 30px;
+    padding: 3px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.upVote {
+    background-color: #B22222;
+}
+
+.mouaisVote {
+    background-color: white;
+    color: black;
+}
+
+.leave {
+    color: white;
+    background-color: #DC143C;
+    font-size: 18px;
+    font-family: "Arimo";
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #B22222;
+    margin-top: 1px;
+}
+
+.leaveSection {
+    margin-top: 50px;
+}
+
+.pdpImg{ 
+    width: 500px;
+    height: 500px;
+}
+
+.pdpSection {
+    text-align: center;
+    border: 3px solid;
+    margin: auto auto; 
+    width: 500px;
+    height: 500px;
+}

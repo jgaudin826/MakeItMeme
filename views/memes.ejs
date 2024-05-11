@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Meme</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Création du meme</title>
+    <link rel='stylesheet' href='/stylesheets/memes.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
   <body id="body">
-    <h1>Meme</h1>
-    <p>Welcome to Meme</p>
     <script src="/javascripts/memes.js" type="module"></script>
     <script src="/javascripts/api.js" type="module"></script>
-    <a id="leave">Leave</a>
-    <p id="memeTitle"></p>
-    <img id="meme" src="" alt="">
-    <a id="changeMeme">Change Meme</a>
-    <form name="captions" id="captions" action="get">
-    </form>
-    <a id="submit"> Submit</a>
-    <p id="timer"></p>
+    <h2>Créez votre meme !</h2>
+      <section class="memeImg">
+        <p id="memeTitle"></p>
+        <img id="meme" src="">
+      </section>
+      <section class="form">
+        <form name="captions" id="captions" class="memeForm">
+        </form>
+      </section>
+      <section class="memeText">
+        <a id="changeMeme">Changer de meme</a>
+        <a id="submit">Envoyez votre meme !</a>
+        <a id="leave" class="leave">Quitter</a>
+      </section>
   </body>
 </html>

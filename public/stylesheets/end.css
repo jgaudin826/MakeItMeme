@@ -1,0 +1,154 @@
+* {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 105vh;
+    background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
+    font-family: "Arimo";
+}
+
+h2 {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.pdpImg1 {
+    text-align: center;
+    margin: auto auto;
+    border: 3px solid;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.pdpImg2 {
+    text-align: center;
+    margin: auto auto;
+    border: 3px solid;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.pdpImg3 {
+    text-align: center;
+    margin: auto auto;
+    border: 3px solid;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: inline-block; 
+    margin-right: 20px; 
+  }
+
+.leaderboard {
+    list-style: none;
+}
+
+a {
+    color: white;
+    background-color: #DC143C;
+    font-size: 18px;
+    font-family: "Arimo";
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #B22222;
+    margin-top: 1px;
+}
+
+.leaveSection {
+    margin-top: 50px;
+}
+
+
+
+
+
+.classement{
+    font-size:  45px; 
+
+
+
+}
+
+
+.classement2{
+    font-size:  45px; 
+    margin-top: -6.5%;
+    margin-left: 30%;
+
+
+}
+
+
+.classement3{
+    font-size:  45px; 
+    margin-top: -6.5%;
+    margin-right: 30%;
+
+
+}
+
+.joueur1{
+    font-size: 50px;
+    margin-top: -2%;
+
+}
+
+.joueur2{
+    font-size: 50px;
+    margin-top: -7.5%;
+    margin-left: 40%;
+
+
+    
+}
+
+.joueur3{
+    font-size: 50px;
+    margin-top: -7%;
+    margin-right: 38%;
+    
+}
+
+
+.score1{
+    font-size: 40px;
+    margin-top: -3%;
+
+
+
+}
+
+.score2{
+    font-size: 40px;
+    margin-top: -6%;
+    margin-left: 40%;
+
+
+
+}
+
+.score3{
+    font-size: 40px;
+    margin-top: -5.7%;
+    margin-right: 38%;
+
+
+
+
+}
+    
+    
