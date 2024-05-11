@@ -2,9 +2,9 @@ import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
 
 window.socket = io();
 
-let roomID = document.cookie.split("; ").find((row) => row.startsWith("roomID="))?.split("=")[1];
-let username = document.cookie.split("; ").find((row) => row.startsWith("username="))?.split("=")[1];
-let profilePictureURL = document.cookie.split("; ").find((row) => row.startsWith("profilePictureURL="))?.split("=")[1];
+const roomID = document.cookie.split("; ").find((row) => row.startsWith("roomID="))?.split("=")[1];
+const username = document.cookie.split("; ").find((row) => row.startsWith("username="))?.split("=")[1];
+const profilePictureURL = document.cookie.split("; ").find((row) => row.startsWith("profilePictureURL="))?.split("=")[1];
 socket.emit("joinRoom", roomID,username,profilePictureURL)
 
 document.getElementById("username").textContent = username
@@ -12,9 +12,9 @@ document.getElementById("profilePicture").src = profilePictureURL
 document.getElementById("roomID").textContent = document.getElementById("roomID").textContent + roomID
 
 socket.on('error', () => {
+  socket.disconnect();
   document.location.href="/";
   alert("Error! A player with the same username already exists in the game you are trying to join")
-  socket.disconnect();
 });
 
 document.getElementById("leave").onclick = function() {

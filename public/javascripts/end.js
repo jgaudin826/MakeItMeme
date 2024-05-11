@@ -12,7 +12,7 @@ document.getElementById("leave").onclick = function() {
   document.location.href="/";
 }
 
-socket.on("rankings", (playerScores) => {
+socket.on("finalRankings", (playerScores) => {
     // Scores
     let oldScoresList = document.getElementById("scores")
     oldScoresList.remove();
@@ -55,5 +55,6 @@ let timer = setInterval( function() {
 }, 1000)
 
 socket.on("newGame", () => {
+    socket.disconnect();
     document.location.href = "/rooms"
 })

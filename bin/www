@@ -32,6 +32,7 @@ server.on('listening', onListening);
 
 const io = new Server(server);
 let game
+let memeTimer
 
 // Customisation
 let nRounds = 3
@@ -40,6 +41,7 @@ let nRounds = 3
 io.on('connection', async (socket) => {
   console.info(`a user connected [id=${socket.id}]`);
   socket.on('joinRoom', async function(roomID,username,profilePictureURL) {
+    console.log(username+ " joined room " + roomID)
     var sockets = await io.in(roomID).fetchSockets();
 
     for (let player of sockets) {
@@ -48,6 +50,12 @@ io.on('connection', async (socket) => {
       }
     }
 
+    socket.on('disconnect', async () => {
+      console.log(username + " left room " + roomID);
+      sockets = await io.in(roomID).fetchSockets();
+      io.to(roomID).emit("playerList", sockets.map(function (socket) {return socket.data}));
+    })
+
     socket.data.username = username
     socket.data.profilePictureURL = profilePictureURL
     socket.join(roomID);
@@ -55,17 +63,13 @@ io.on('connection', async (socket) => {
     sockets = await io.in(roomID).fetchSockets();
     io.to(roomID).emit("playerList", sockets.map(function (socket) {return socket.data}));
 
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    })
-
     socket.on("start", async () => {
       io.to(roomID).emit("startGame", "");
       game = {playerList: [], round: 1, nMemeSubmited : 0, nVotesSubmited: 0, currentMeme : 0}
       sockets = await io.in(roomID).fetchSockets();
       for (let player of sockets) {
         game.playerList.push(player.data.username)
-        game[player.data.username] = {totalPoints: 0, roundPoints: 0, meme: ""}
+        game[player.data.username] = {profilePicture: player.data.profilePictureURL , totalPoints: 0, roundPoints: 0, meme: ""}
       }
       startRound()
     })
@@ -81,17 +85,18 @@ io.on('connection', async (socket) => {
       game[socket.data.username].meme = meme
       if (game.nMemeSubmited == game.playerList.length) {
         setTimeout(() => {
+          clearTimeout(memeTimer)
           io.to(roomID).emit("memeTimeEnd", "");
           setTimeout(() => {
             votes()
-          }, 1000);
-        }, 1000);
+          }, 500);
+        }, 500);
       }
     })
     
     const votes = () => {
       let currentPlayer	= game.playerList[game.currentMeme]
-      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + sockets.length),currentPlayer);
+      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + game.playerList.length),currentPlayer);
 
       // Loop until all memes have been voted
       var voteTimer = setInterval(() => {
@@ -99,33 +104,30 @@ io.on('connection', async (socket) => {
           io.to(roomID).emit("roundEnd", "");
           setTimeout(() => {
             roundEnd()
-          }, 1000); 
+          }, 500); 
         } else {
           io.to(roomID).emit("voteTimeEnd", "");
         }
 
-        game.nVotesSubmited = 0
         if (game.currentMeme === game.playerList.length-1) {
           clearInterval(voteTimer);
         } else {
           game.currentMeme += 1
           setTimeout(() => {
             currentPlayer	= game.playerList[game.currentMeme]
-            io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + sockets.length));
-          }, 1000);
+            io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + game.playerList.length),currentPlayer);
+          }, 500);
         }
       }, 21000);
     }
 
     // up vote = 1, novote = 0, downvote = -1
     socket.on('submitVote', (vote) => {
-      game.nVotesSubmited += 1
       let currentPlayer	= game.playerList[game.currentMeme]
       game[currentPlayer].roundPoints += (Number(vote) * 100)
     })
 
     const roundEnd = () => {
-      console.log(game)
       game.currentMeme = 0
       game.nMemeSubmited = 0
 
@@ -133,17 +135,15 @@ io.on('connection', async (socket) => {
         game[player].totalPoints += game[player].roundPoints
       }
 
-      let playerScores = sockets.map(function (socket) {return [socket.data.username, socket.data.profilePictureURL, game[socket.data.username].roundPoints, game[socket.data.username].totalPoints]})
+      let playerScores = game.playerList.map(function (player) {return [player, game[player].profilePicture, game[player].roundPoints, game[player].totalPoints]})
       playerScores.sort((a,b) => {
-        return a[3] - b[3]
+        return b[3] - a[3]
       })
       
       let allMemes = game.playerList.map(function (player) {return [game[player].meme,player,game[player].roundPoints]})
-      playerScores.sort((a,b) => {
-        return a[2] - b[2]
+      allMemes.sort((a,b) => {
+        return b[2] - a[2]
       })
-      
-      // Sorting the lists - not done
       
       io.to(roomID).emit("rankings", playerScores, allMemes, [game.round, nRounds])
 
@@ -156,18 +156,19 @@ io.on('connection', async (socket) => {
           io.to(roomID).emit("endGame", "")
           setTimeout(() => {
             gameEnd()
-          }, 1000); 
+          }, 500); 
         } else {
           game.round += 1
           io.to(roomID).emit("startRound", "")
+          startRound()
         }
       }, 40000)
     }
 
     const gameEnd = () => {
-      let finalPlayerScores = sockets.map(function (socket) {return [socket.data.username, socket.data.profilePictureURL, game[socket.data.username].totalPoints]})
+      let finalPlayerScores =  game.playerList.map(function (player) {return [player, game[player].profilePicture, game[player].totalPoints]})
       finalPlayerScores.sort((a,b) => {
-        return a[2] - b[2]
+        return b[2] - a[2]
       })
       io.to(roomID).emit("finalRankings", finalPlayerScores.slice(0, 3))
 
