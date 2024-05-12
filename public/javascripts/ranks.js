@@ -2,16 +2,21 @@ import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
 
 window.socket = io();
 
+// Collect player info stored into cookies
 const roomID = document.cookie.split("; ").find((row) => row.startsWith("roomID="))?.split("=")[1];
 const username = document.cookie.split("; ").find((row) => row.startsWith("username="))?.split("=")[1];
 const profilePictureURL = document.cookie.split("; ").find((row) => row.startsWith("profilePictureURL="))?.split("=")[1];
+
+// join room using player info from cookies
 socket.emit("joinRoom", roomID,username,profilePictureURL);
 
+// 'leave' button to disconnect and go to home page
 document.getElementById("leave").onclick = function() {
   socket.disconnect();
   document.location.href="/";
 }
 
+// Receive the final rankings from back end
 socket.on("rankings", (playerScores, allMemes, roundInfo) => {
     document.getElementById("round").textContent = "Round " + roundInfo[0] + " of " + roundInfo[1] + " - Results :"
 
@@ -20,6 +25,7 @@ socket.on("rankings", (playerScores, allMemes, roundInfo) => {
     oldMemeList.remove();
     const list1 = document.createElement('ul')
     list1.setAttribute("id","memes")
+    // Fill list with the memes info
     for (let meme of allMemes) {
       var img = document.createElement('img')
       img.src = meme[0]
@@ -53,6 +59,7 @@ socket.on("rankings", (playerScores, allMemes, roundInfo) => {
     oldScoresList.remove();
     const list2 = document.createElement('ol');
     list2.setAttribute("id","scores");
+    // Fill the list with the players scores and info
     for (let player of playerScores) {
         var img = document.createElement('img')
         img.src = player[1]
@@ -72,8 +79,10 @@ socket.on("rankings", (playerScores, allMemes, roundInfo) => {
     document.body.appendChild(list2)
 })
 
+// Timer / Countdown
 let countDown = 40000
 let timer = setInterval( function() {
+    // update the text every second
     document.getElementById("timer").textContent = "Next Round in " + Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
     countDown -= 1000
 
@@ -82,10 +91,12 @@ let timer = setInterval( function() {
     }
 }, 1000)
 
+// Start new round / go to meme page
 socket.on("startRound", () => {
     document.location.href = "/memes"
 })
 
+// End game / go to end page
 socket.on("endGame", () => {
     document.location.href = "/end"
 })
