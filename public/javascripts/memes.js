@@ -64,8 +64,32 @@ document.getElementById("submit").onclick = function() {
     }
     PostAPI(currentMeme.id, captionsList).then(function(result){
         finalMeme = result
-        socket.emit("submitMeme", roomID, finalMeme)
-        console.log(meme)
+        socket.emit("submitMeme", finalMeme)
         document.location.href = "/wait"
     })
 }
+
+socket.on("memeTimeEnd", () => {
+    let captionsList = []
+    for (let i=0; i< currentMeme.box_count; i++) {
+        if(document.forms["captions"][i].value == '') {
+            captionsList.push("Caption " + (i+1))
+        }
+        captionsList.push(document.forms["captions"][i].value)
+    }
+    PostAPI(currentMeme.id, captionsList).then(function(result){
+        finalMeme = result
+        socket.emit("submitMeme", finalMeme)
+        document.location.href = "/votes"
+    })
+})
+
+let countDown = 120000
+let timer = setInterval( function() {
+    document.getElementById("timer").textContent = Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
+    countDown -= 1000
+
+    if (countDown < 0) {
+        clearInterval(timer)
+    }
+}, 1000)

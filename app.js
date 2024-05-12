@@ -7,9 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/home');
 var roomsRouter = require('./routes/rooms');
 var memesRouter = require('./routes/memes');
+var waitRouter  = require('./routes/wait')
 var votesRouter = require('./routes/votes');
 var ranksRouter = require('./routes/ranks');
-var waitRouter = require('./routes/wait');
 var endRouter = require('./routes/end');
 
 var app = express();
@@ -28,10 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/rooms', roomsRouter);
 app.use('/memes', memesRouter);
+app.use('/wait', waitRouter)
 app.use('/votes', votesRouter);
 app.use('/ranks', ranksRouter);
-app.use('/wait', waitRouter);
 app.use('/end', endRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

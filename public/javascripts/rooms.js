@@ -23,14 +23,14 @@ document.getElementById("leave").onclick = function() {
 }
 
 document.getElementById("start").onclick = function() {
-  socket.emit("start", roomID)
+  socket.emit("start", "")
 }
 
 socket.on("startGame", () => {
   document.location.href = "/memes"
 })
 
-socket.on("playerList", (sockets)=> {
+socket.on("playerList", (sockets) => {
   let oldList = document.getElementById("playerList")
   oldList.remove();
   const list = document.createElement('ul');
@@ -45,6 +45,5 @@ socket.on("playerList", (sockets)=> {
     li.appendChild(p)
     list.appendChild(li)
   }
-  const body = document.getElementById("body");
-  body.appendChild(list)
+  document.body.appendChild(list)
 })
