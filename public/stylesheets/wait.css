@@ -22,6 +22,21 @@ h5 {
     font-size: 25px;
 }
 
+
+.leave {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: #DC143C;
+  font-size: 18px;
+  font-family: "Arimo";
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: 1px solid #B22222;
+}
+
 .loading-container {
     width: 1200px;
     height: 15px;
