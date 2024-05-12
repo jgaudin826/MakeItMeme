@@ -77,7 +77,11 @@ document.getElementById("submit").onclick = function() {
     // Collect the captions from the form
     let captionsList = []
     for (let i=0; i< currentMeme.box_count; i++) {
-        captionsList.push(document.forms["captions"][i].value)
+        if(document.forms["captions"][i].value == '') {
+            captionsList.push(" ")
+        } else {
+            captionsList.push(document.forms["captions"][i].value)
+        }
     }
     // Calls on the API to fill the meme with the user's captions
     PostAPI(currentMeme.id, captionsList).then(function(result){
@@ -96,8 +100,9 @@ socket.on("memeTimeEnd", () => {
         // if input is emty insert empty text
         if(document.forms["captions"][i].value == '') {
             captionsList.push(" ")
+        } else {
+            captionsList.push(document.forms["captions"][i].value)
         }
-        captionsList.push(document.forms["captions"][i].value)
     }
     // Calls on the API to fill the meme with the user's captions
     PostAPI(currentMeme.id, captionsList).then(function(result){

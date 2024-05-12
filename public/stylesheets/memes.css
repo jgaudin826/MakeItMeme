@@ -16,6 +16,7 @@ a {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
     align-items: center;
+    margin-bottom: 20px;
     h2 {
         color: white;
         font-size: 60px;
@@ -52,11 +53,11 @@ a {
         #changeMeme {
             margin-left: 30%;
             width: 40%;
-            justify-self: center;
             border: 2px solid rgba(255, 255, 255, 0.5);
             color: white;
-            padding: 16px 2px;
+            padding: 16px 20px;
             border-radius: 10px;
+            cursor: pointer;
         }
     }
     .form {
