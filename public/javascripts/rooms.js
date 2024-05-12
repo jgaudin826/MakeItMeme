@@ -48,6 +48,7 @@ socket.on("playerList", (sockets) => {
   // create a new one
   const list = document.createElement('ul')
   list.setAttribute("id","playerList")
+  list.setAttribute("class","list")
 
   // fill it up with the new data
   for (let user of sockets) {

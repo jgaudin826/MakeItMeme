@@ -5,22 +5,25 @@
     <link rel='stylesheet' href='/stylesheets/memes.css' />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lilita+One&display=swap" rel="stylesheet">
   </head>
-  <body id="body">
+  <body>
     <script src="/javascripts/memes.js" type="module"></script>
     <script src="/javascripts/api.js" type="module"></script>
-    <h2>Créez votre meme !</h2>
-      <section class="memeImg">
+    <section class="header">
+      <a id="leave">Quitter</a>
+      <h2>Créez votre meme !</h2>
+    </section>
+    <section class="grid">
+      <section class="meme">
         <p id="memeTitle"></p>
         <img id="meme" src="">
+        <a id="changeMeme">Changer de meme</a>
       </section>
-      <section class="form">
+      <section id="form" class="form">
+        <p id="timer"></p>
         <form name="captions" id="captions" class="memeForm">
         </form>
-      </section>
-      <section class="memeText">
-        <a id="changeMeme">Changer de meme</a>
         <a id="submit">Envoyez votre meme !</a>
-        <a id="leave" class="leave">Quitter</a>
       </section>
+    </section>
   </body>
 </html>

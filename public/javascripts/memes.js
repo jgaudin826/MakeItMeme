@@ -60,7 +60,9 @@ const generateMemePage = () => {
             textBox.setAttribute("placeholder", "caption " + (i+1))
             form.appendChild(textBox)
         }
-        document.body.appendChild(form) // Add it to the body element of the page
+
+        let section = document.getElementById("form")
+        section.appendChild(form) // Add it to the page
     })
 }
 
@@ -109,7 +111,7 @@ socket.on("memeTimeEnd", () => {
 let countDown = 120000
 let timer = setInterval( function() {
     // update the text every second
-    document.getElementById("timer").textContent = Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
+    document.getElementById("timer").textContent = "Temps restant : " + Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + " min " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
     countDown -= 1000
 
     if (countDown < 0) {
