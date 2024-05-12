@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    height: 110vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
 }
 
@@ -16,9 +16,6 @@ h2 {
     font-size: 60px;
 }
 
-.rooms {
-
-}
 
 h3 {
     justify-items: center;
@@ -72,3 +69,42 @@ h3 {
     height: 500px;
     margin-left: 20% ;
 }
+
+.pdpSection1 {
+    border: 3px solid;
+    width: 800px;
+    height: 380px;
+    margin-left: 0%;
+    margin-top: -7.5%;
+    column-count: 5; 
+    column-gap: 20px; 
+}
+
+.pdpSection1 li {
+    display: inline-block;
+     
+}
+
+
+.pdpImg1 {
+    margin-top: 1%;
+    margin-right: 77%;
+    width: 10px;
+    border: 3px solid;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 100px; 
+}
+
+.space{
+    font-size: 5px;
+
+
+
+}
+
+
+
+
+
