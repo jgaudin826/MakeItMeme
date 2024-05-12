@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    height: 110vh;
+    height: 120vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
@@ -53,7 +53,7 @@ a {
 }
 
 .form > input {
-    height: 30px;
+    height: 20px;
     width: 200px;
     font-size: 15px;
     border-radius: 30px;
