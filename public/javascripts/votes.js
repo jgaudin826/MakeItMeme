@@ -33,7 +33,7 @@ socket.on("vote", (meme, number, player) => {
     let countDown = 20000
     let timer = setInterval( function() {
         // update the text every second
-        document.getElementById("timer").textContent = Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
+        document.getElementById("timer").textContent = "Temps Restant " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
         countDown -= 1000
 
         if (countDown < 0) {

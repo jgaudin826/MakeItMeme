@@ -1,65 +1,70 @@
 * {
     text-align: center;
+    margin: 0;
+    color: white;
 }
 
 body {
-    margin: 0;
+    margin: 2em;
     height: 100vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
 
-h2 {
+a{
+    text-decoration: none;
     color: white;
-    margin-top: auto;
-    margin-bottom: 20px;
-    font-size: 60px;
 }
 
-a {
-    color: white;
-    background-color: #0000CD;
-    border: 1px solid #00008B;
-    font-size: 30px;
-    padding: 3px 15px;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-bottom: 30px;
+.header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
+    margin-bottom: 20px;
+    h2 {
+        color: white;
+        font-size: 60px;
+        margin: 0;
+    }
+    #leave {
+        justify-self: start;
+        color: white;
+        background-color: #DC143C;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    #meme {
+        height: 400px;
+        border-radius: 10px;
+    }
+    .vote {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
 }
 
 .upVote {
     background-color: #B22222;
+    padding: 16px;
 }
 
 .mouaisVote {
     background-color: white;
     color: black;
+    padding: 16px 20px;
 }
 
-.leave {
-    color: white;
-    background-color: #DC143C;
-    font-size: 18px;
-    font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #B22222;
-    margin-top: 1px;
-}
-
-.leaveSection {
-    margin-top: 50px;
-}
-
-.pdpImg{ 
-    width: 500px;
-    height: 500px;
-}
-
-.pdpSection {
-    text-align: center;
-    border: 3px solid;
-    margin: auto auto; 
-    width: 500px;
-    height: 500px;
+.downVote {
+    background-color: #00BFFF;
+    padding: 16px;
 }

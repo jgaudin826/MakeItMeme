@@ -74,7 +74,7 @@ socket.on("rankings", (playerScores, allMemes, roundInfo) => {
 let countDown = 40000
 let timer = setInterval( function() {
     // update the text every second
-    document.getElementById("timer").textContent = "La prochaine manche commence dans " + Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + " min " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
+    document.getElementById("timer").textContent = "La prochaine manche commence dans " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
     countDown -= 1000
 
     if (countDown < 0) {

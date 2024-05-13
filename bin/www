@@ -35,7 +35,7 @@ let game
 let memeTimer
 
 // Customisation
-let nRounds = 1
+let nRounds = 3
 
 // Main code starts once a user connects
 io.on('connection', async (socket) => {
@@ -118,7 +118,7 @@ io.on('connection', async (socket) => {
     // Start the voting session
     const votes = () => {
       let currentPlayer	= game.playerList[game.currentMeme]
-      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + game.playerList.length),currentPlayer);
+      io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + " sur " + game.playerList.length),currentPlayer);
 
       // Loop until all memes have been voted (every 20 seconds)
       var voteTimer = setInterval(() => {

@@ -7,19 +7,20 @@
   </head>
   <body id="body">
     <script src="/javascripts/votes.js" type="module"></script>
-    <h2>Votez le meme !</h2>
-    <section>
-        <img id="meme" class="pdpSection">
+    <section class="header">
+      <a id="leave" class="leave">Quitter</a>
+      <h2>Votez le meme !</h2>
+      <p id="memeNumber"></p>
+    </section>
+    <section class="main">
+      <img id="meme">
+      <a id="download" href="" download="MemePasMal" target="_blank">Télécharger</a>
+      <section id="vote" hidden>
         <a id="upvote" class="upVote">↑</a>
         <a id="novote" class="mouaisVote">Mouais</a>
         <a id="downvote" class="downVote">↓</a>
+      </section>
+      <p id="timer"></p>
     </section>
-    <section class="leaveSection">
-      <a id="leave" class="leave">Quitter</a>
-    </section>
-    <p id="round"></p>
-    <p id="timer"></p>
-    <p id="memeNumber"></p>
-    <a id="download" href="" download="">Télécharger</a>
   </body>
 </html>
