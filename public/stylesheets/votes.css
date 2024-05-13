@@ -47,12 +47,11 @@ a{
         border-radius: 10px;
     }
     #vote {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        justify-self: center;
         a {
             font-size: xx-large;
-            padding: 14px 20px;
+            padding: 12px 20px;
+            margin: 20px;
         }
         .upVote {
             background-color: #B22222;
@@ -62,7 +61,7 @@ a{
         .mouaisVote {
             background-color: white;
             color: black;
-            border-radius: 25%;
+            border-radius: 30px;
         }
         
         .downVote {
