@@ -26,14 +26,10 @@ document.getElementById("back").onclick = function() {
 socket.on("finalRankings", (playerScores) => {
 
     // remove the old list
-    let oldScoresList = document.getElementById("scores")
-    oldScoresList.remove();
-
-    // create a new one
-    const list = document.createElement('ol')
-    list.setAttribute("id","scores")
+    let scoresList = document.getElementById("scores")
 
     // fill it up with the new data
+    let rank = 1
     for (let player of playerScores) {
         var img = document.createElement('img')
         img.src = player[1]
@@ -42,12 +38,13 @@ socket.on("finalRankings", (playerScores) => {
         var h1 = document.createElement('h1')
         h1.innerText = player[2]
         var li = document.createElement('li')
+        li.setAttribute("class", "rank"+rank)
         li.appendChild(img)
         li.appendChild(h3)
         li.appendChild(h1)
-        list.appendChild(li)
+        scoresList.appendChild(li)
+        rank += 1
     }
-    document.body.appendChild(list) // Add it to the body element of the page
 })
 
 
@@ -55,7 +52,7 @@ socket.on("finalRankings", (playerScores) => {
 let countDown = 30000
 let timer = setInterval( function() {
     // update the text every second
-    document.getElementById("timer").textContent = "Next Round in " + Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
+    document.getElementById("timer").textContent = "Retour au lobby dans " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
     countDown -= 1000
 
     if (countDown < 0) {

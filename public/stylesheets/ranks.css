@@ -1,46 +1,108 @@
  * {
     text-align: center;
+    margin: 0;
 }
 
 body {
-    margin: 0;
-    height: 100vh;
+    margin: 2em;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
 
-h2 {
-    color: white;
-    margin-top: auto;
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
     margin-bottom: 20px;
-    font-size: 60px;
+    h2 {
+        color: white;
+        font-size: 50px;
+        margin: 0;
+    }
+    #leave {
+        justify-self: start;
+        color: white;
+        background-color: #DC143C;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 }
 
-
-.leave {
-    color: white;
-    background-color: #DC143C;
-    font-size: 18px;
-    font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #B22222;
-    margin-top: 1px;
-}
-
-.leaveSection {
-    margin-top: 50px;
-}
-
-.pdpImg{ 
-    width: 500px;
-    height: 500px;
-}
-
-.pdpSection {
-    text-align: center;
-    border: 3px solid;
-    margin: auto auto; 
-    width: 500px;
-    height: 500px;  
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items:end;
+    gap: 30px;
+    #memes {
+        list-style-type: none;
+        padding: 0;
+        li {
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            img {
+                width: 100%;
+                border-radius: 20px 20px 0px 0px;
+            }
+            .description {
+                padding: 20px 30px;
+                border-radius: 0px 0px 20px 20px;
+                display: flex;
+                align-items: center;
+                justify-content:space-between;
+                background-color: white;
+                p {
+                    color: rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+        
+    }
+    .classement {
+        width: 100%;
+        #classement {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: x-large;
+        }
+        .score {
+            background-color: white;
+            border-radius: 20px;
+            padding: 12px;
+            #scores {
+                padding: 0;
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 5px;
+                    margin-bottom: 20px;
+                    img {
+                        height: 50px;
+                        border-radius: 100%;
+                    }
+                    p {
+                        flex-grow: 6;
+                        font-size: smaller;
+                    }
+                    h1 {
+                        font-size: x-large;
+                    }
+                    h3 {
+                        font-size: larger;
+                    }
+                }
+            }
+        }
+        #timer {
+            padding-top: 30px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
 }

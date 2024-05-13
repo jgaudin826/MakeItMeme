@@ -48,6 +48,7 @@ socket.on("playerList", (sockets) => {
   // create a new one
   const list = document.createElement('ul')
   list.setAttribute("id","playerList")
+  list.setAttribute("class","list")
 
   // fill it up with the new data
   for (let user of sockets) {
@@ -60,5 +61,7 @@ socket.on("playerList", (sockets) => {
     li.appendChild(p)
     list.appendChild(li)
   }
-  document.body.appendChild(list) // Add it to the body element of the page
+
+  let section = document.getElementById("list")
+  section.appendChild(list) // Add it to the body element of the page
 })

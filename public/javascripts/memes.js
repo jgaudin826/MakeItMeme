@@ -60,7 +60,9 @@ const generateMemePage = () => {
             textBox.setAttribute("placeholder", "caption " + (i+1))
             form.appendChild(textBox)
         }
-        document.body.appendChild(form) // Add it to the body element of the page
+
+        let section = document.getElementById("form")
+        section.appendChild(form) // Add it to the page
     })
 }
 
@@ -75,7 +77,11 @@ document.getElementById("submit").onclick = function() {
     // Collect the captions from the form
     let captionsList = []
     for (let i=0; i< currentMeme.box_count; i++) {
-        captionsList.push(document.forms["captions"][i].value)
+        if(document.forms["captions"][i].value == '') {
+            captionsList.push(" ")
+        } else {
+            captionsList.push(document.forms["captions"][i].value)
+        }
     }
     // Calls on the API to fill the meme with the user's captions
     PostAPI(currentMeme.id, captionsList).then(function(result){
@@ -94,8 +100,9 @@ socket.on("memeTimeEnd", () => {
         // if input is emty insert empty text
         if(document.forms["captions"][i].value == '') {
             captionsList.push(" ")
+        } else {
+            captionsList.push(document.forms["captions"][i].value)
         }
-        captionsList.push(document.forms["captions"][i].value)
     }
     // Calls on the API to fill the meme with the user's captions
     PostAPI(currentMeme.id, captionsList).then(function(result){
@@ -109,7 +116,7 @@ socket.on("memeTimeEnd", () => {
 let countDown = 120000
 let timer = setInterval( function() {
     // update the text every second
-    document.getElementById("timer").textContent = Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + "m " + Math.floor((countDown % (1000 * 60)) / 1000) + "s"
+    document.getElementById("timer").textContent = "Temps restant : " + Math.floor(countDown % ((1000 * 60 * 60)) / (1000 * 60)) + " min " + Math.floor((countDown % (1000 * 60)) / 1000) + " sec"
     countDown -= 1000
 
     if (countDown < 0) {

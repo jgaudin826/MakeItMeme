@@ -3,59 +3,96 @@
 }
 
 body {
-    margin: 0;
-    height: 120vh;
+    margin: 2em;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
 
-h2 {
-    color: white;
-    margin-top: auto;
-    margin-bottom: 20px;
-    font-size: 60px;
-}
-
 a {
-    color: white;
-    background-color: #0000CD;
-    border: 1px solid #00008B;
-    font-size: 13px;
-    padding: 3px 10px;
-    border-radius: 30px;
     text-decoration: none;
-    margin-bottom: 30px;
 }
 
-.memeInput {
-    height: 50px;
-    width: 200px;
-    border: 1px solid #00008B;
-    border-radius: 30px;
+.header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    align-items: center;
+    margin-bottom: 20px;
+    h2 {
+        color: white;
+        font-size: 60px;
+        margin: 0;
+    }
+    #leave {
+        justify-self: start;
+        color: white;
+        background-color: #DC143C;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 }
 
-.leave {
-    color: white;
-    background-color: #DC143C;
-    font-size: 18px;
-    font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #B22222;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+    .meme {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-items: center;
+        #memeTitle {
+            color: white;
+            font-size:x-large;
+            margin: 0;
+        }
+        #meme{
+            height: 500px;
+        }
+        #changeMeme {
+            margin-left: 30%;
+            width: 40%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        #timer {
+            color: white;
+        }
+        input {
+            display: inline-block;
+            width: 100%;
+            color: white;
+            background-color:transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 12px 0px;
+            margin: 10px 0; 
+        }
+        input::placeholder{
+            color: white;
+        }
+        #submit {
+            width: 100%;
+            background-color: #DC143C;
+            color: white;
+            padding: 12px 0px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
 }
 
-.leaveSection {
-    margin-top: 75px;
-}
 
-.memeText {
-    margin-top: 20px;
-}
 
-.form > input {
-    height: 20px;
-    width: 200px;
-    font-size: 15px;
-    border-radius: 30px;
-    border: 1px solid #00008B;
-}
+
+

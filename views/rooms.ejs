@@ -7,21 +7,21 @@
   </head>
   <body id="body">
     <script src="/javascripts/rooms.js" type="module"></script>
-    <h2>MEME PAS MAL</h2>
-    <section class="room">
-        <h3 id="roomID">Code de la partie :</h3>
-        <h3 class="playersTitle">Joueurs (Maximum 10) :</h3>
-        <section class="pdpSection"></section>
-          <img src="" id="profilePicture" class="pdpImg" alt="">
-        </section>
+    <section class="header">
+      <a id="leave" class="leave">Quitter</a>
+      <h2>MEME PAS MAL</h2>
+    </section>
+    <section class="grid">
+      <section id="list"class="list">
+        <h1>Joueurs</h1>
+        <ul id="playerList"></ul>
+      </section>
+      <section class="player">
+        <img src="" id="profilePicture" alt="">
         <h3 id="username"></h3>
-        <section class="playersList">
-            <ul id="playersList" class="list">
-            </ul>
-        </section>
-        <section>
-            <a id="start" class="start">Commencer</a>
-            <a id="leave" class="leave">Quitter</a>
-        </section>
+        <a id="start" class="start">Commencer</a>
+        <h3 id="roomID">Code de la partie : </h3>
+      </section>
+    </section>
   </body>
 </html>
