@@ -40,7 +40,15 @@ socket.on("startGame", () => {
 
 // Recieve every player info connected to  current room
 socket.on("playerList", (sockets) => {
-  let list = document.getElementById("playerList")
+
+  // remove the old list
+  let oldList = document.getElementById("playerList")
+  oldList.remove()
+
+  // create a new one
+  const list = document.createElement('ul')
+  list.setAttribute("id","playerList")
+  list.setAttribute("class","list")
 
   // fill it up with the new data
   for (let user of sockets) {
