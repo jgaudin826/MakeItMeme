@@ -1,4 +1,4 @@
-# MakeItMeme
+# MemePasMal
 **__Présentation :__**
 
 Connaissez-vous Make It Meme ? Eh bien c'est comme Make It Meme mais c'est Meme Pas Mal ! Si vous ne connaissez pas Make It Meme, c'est très simple. L'objectif est d'affronter vos amis en créant vos propres memes, faites votre possible pour créer les memes les plus originaux et les plus drôles possibles afin de terminer en 1ère position. C'est le jeu idéal si vous avez un message un peu délicat à faire passer à vos amis tout en s'amusant.
