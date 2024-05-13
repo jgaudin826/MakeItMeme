@@ -61,5 +61,7 @@ socket.on("playerList", (sockets) => {
     li.appendChild(p)
     list.appendChild(li)
   }
-  document.body.appendChild(list) // Add it to the body element of the page
+
+  let section = document.getElementById("list")
+  section.appendChild(list) // Add it to the body element of the page
 })
