@@ -46,25 +46,29 @@ a{
         height: 400px;
         border-radius: 10px;
     }
-    .vote {
+    #vote {
         display: flex;
         justify-content: center;
         gap: 20px;
+        a {
+            font-size: xx-large;
+            padding: 14px 20px;
+        }
     }
 }
 
 .upVote {
     background-color: #B22222;
-    padding: 16px;
+    border-radius: 50%
 }
 
 .mouaisVote {
     background-color: white;
     color: black;
-    padding: 16px 20px;
+    border-radius: 25%;
 }
 
 .downVote {
     background-color: #00BFFF;
-    padding: 16px;
+    border-radius: 50%
 }
