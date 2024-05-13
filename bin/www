@@ -110,8 +110,8 @@ io.on('connection', async (socket) => {
           io.to(roomID).emit("memeTimeEnd", "");
           setTimeout(() => {
             votes()
-          }, 500);
-        }, 500);
+          }, 1000);
+        }, 1000);
       }
     })
     
@@ -128,7 +128,7 @@ io.on('connection', async (socket) => {
           io.to(roomID).emit("roundEnd", "");
           setTimeout(() => {
             roundEnd()
-          }, 500)
+          }, 1000)
           clearInterval(voteTimer)
         } else {
           // Go to next meme
@@ -137,7 +137,7 @@ io.on('connection', async (socket) => {
           setTimeout(() => {
             currentPlayer	= game.playerList[game.currentMeme]
             io.to(roomID).emit("vote", game[currentPlayer].meme, ((game.currentMeme+1) + "/" + game.playerList.length),currentPlayer);
-          }, 500)
+          }, 1000)
         }
       }, 20000)
     }
@@ -184,7 +184,7 @@ io.on('connection', async (socket) => {
           io.to(roomID).emit("endGame", "")
           setTimeout(() => {
             gameEnd()
-          }, 500)
+          }, 1000)
         } else {
           // Next round
           game.round += 1

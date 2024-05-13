@@ -6,6 +6,7 @@
 
 body {
     margin: 2em;
+    height: 100vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
     font-family: "Arimo";
 }
