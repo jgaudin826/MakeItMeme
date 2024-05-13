@@ -1,102 +1,80 @@
 * {
     text-align: center;
+    margin: 0;
 }
 
 body {
-    margin: 0;
+    margin: 2em;
     height: 110vh;
     background: linear-gradient(to bottom left, #6A5ACD 0%, #00BFFF 100%);
 }
 
-h2 {
-    color: #e71f1f;
-    margin-top: auto;
-    margin-bottom: 20px;
-    font-family: "Lilita One";
-    font-size: 60px;
-}
-
-
-h3 {
-    justify-items: center;
-    font-family: "Arimo";
-}
-
-.playersList {
-    display: flex;
-    flex-wrap: wrap;
+.header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 20px;
+    h2 {
+        color: white;
+        font-size: 60px;
+        margin: 0;
+    }
+    #leave {
+        justify-self: start;
+        color: white;
+        background-color: #DC143C;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 }
 
-.list {
-    list-style-type: none;
-}
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    .list {
+        background-color: hsla(195, 100%, 17%, 0.5);
+        border-radius: 20px;
+        padding: 20px;
+        color: white;
+        h1 {
+            font-size: xx-large;
+            padding: 20px;
+        }
+        #playerList {
+            list-style-type: none;
+            display: flex;
+            li {
+                padding: 20px;
+                img {
+                    height: 100px;
+                    border-radius: 50%;
+                }
+                font-size: small;
+            }
+        }
+    }
+    .player {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 20px;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        #profilePicture {
+            width: 200px;
+            border-radius: 50%;
+            margin: auto;
+        }
+        #start {
+            background-color: #00BFFF;
+            padding: 12px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
 
-.start {
-    color: white;
-    background-color: #65B741;
-    font-size: 18px;
-    font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #65B741;
-    margin-top: 1px;
-    margin-right: 20px;
-}
-
-.leave {
-    color: white;
-    background-color: #DC143C;
-    font-size: 18px;
-    font-family: "Arimo";
-    padding: 15px 25px;
-    border-radius: 30px;
-    border: 1px solid #B22222;
-    margin-top: 1px;
-}
-
-.pdpImg{ 
-    width: 500px;
-    height: 500px;
-}
-
-
-.pdpSection1 {
-    border: 3px solid;
-    width: 800px;
-    height: 380px;
-    margin-left: 0%;
-    margin-top: -7.5%;
-    column-count: 5; 
-    column-gap: 20px; 
-}
-
-.pdpSection1 li {
-    display: inline-block;
-     
-}
-
-
-.pdpImg1 {
-    margin-top: 1%;
-    margin-right: 77%;
-    width: 10px;
-    border: 3px solid;
-    border-radius: 100%;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 100px; 
-}
-
-.space{
-    font-size: 5px;
-
-
+    }
 
 }
-
-
-
-
-
